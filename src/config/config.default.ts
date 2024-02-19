@@ -8,6 +8,7 @@ const config = {
     database: '4wheel',
     synchronize: false,
     migrationsRun: false,
+    autoLoadEntities: true,
     logging: false,
     cache: false,
     extra: {
