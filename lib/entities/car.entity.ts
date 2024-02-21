@@ -14,4 +14,13 @@ export class Cars {
 
   @Column({ type: 'json', default: '[]' })
   images: string;
+
+  @Column()
+  isStart: boolean;
+
+  @Column()
+  isPaid: boolean;
+
+  @Column()
+  startDate: string;
 }
