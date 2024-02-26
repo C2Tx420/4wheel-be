@@ -1,5 +1,12 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Users } from './user.entity';
+import { Parking } from './parking.entity';
 
 @Entity()
 export class Cars {
@@ -23,4 +30,12 @@ export class Cars {
 
   @Column()
   startDate: string;
+
+  @ManyToOne(() => Users, (user) => user.cars)
+  @JoinTable()
+  user: Users;
+
+  @ManyToOne(() => Parking, (parking) => parking.cars)
+  @JoinTable()
+  parking: Parking;
 }

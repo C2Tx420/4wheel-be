@@ -5,6 +5,7 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { Cars } from './car.entity';
 @Entity()
 export class Users {
   @PrimaryGeneratedColumn('uuid')
@@ -27,4 +28,7 @@ export class Users {
 
   @Column()
   cicImage: string;
+
+  @OneToMany(() => Cars, (car) => car.user)
+  cars: Cars[];
 }
