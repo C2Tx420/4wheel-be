@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import config from './config/config';
+import { ParkingModule } from './parking/parking.module';
+import { CarModule } from './cars/car.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -10,8 +11,9 @@ import config from './config/config';
       isGlobal: true,
       load: [config],
     }),
+    UserModule,
+    ParkingModule,
+    CarModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
