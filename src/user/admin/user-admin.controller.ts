@@ -1,4 +1,9 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Post } from '@nestjs/common';
 
-@Controller()
-export class userAdminController {}
+@Controller('/user')
+export class userAdminController {
+  @Post('/create')
+  async createUser() {
+    return 'aaa';
+  }
+}
