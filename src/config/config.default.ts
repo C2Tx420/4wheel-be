@@ -6,7 +6,6 @@ const config = {
     username: 'c2tx420',
     password: 'Abcd1234',
     database: '4wheel',
-    synchronize: false,
     migrationsRun: false,
     autoLoadEntities: true,
     logging: false,
