@@ -4,7 +4,6 @@ services:
     container_name: 4wheel-db
     image: postgres:15
     tty: true
-    # restart: always
     environment:
       POSTGRES_USER: c2tx420
       POSTGRES_PASSWORD: Abcd1234

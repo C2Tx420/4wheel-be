@@ -21,7 +21,11 @@ export class UserService {
   }
 
   async getList() {
-    return this.userRepository.find();
+    try {
+      return this.userRepository.find();
+    } catch (e) {
+      throw new Error(e);
+    }
   }
 
   async getDetail(id: string) {
